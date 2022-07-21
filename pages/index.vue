@@ -35,7 +35,7 @@ export default {
       if (typeof window.ethereum !== 'undefined') {
         try {
           // Ask to connect
-          await window.ethereum.send('eth_requestAccounts');
+          await window.ethereum.request({ method: "eth_requestAccounts" });
           const instance = new Web3(window.ethereum)
           // Get necessary info on your node
           const networkId = await instance.eth.net.getId();
